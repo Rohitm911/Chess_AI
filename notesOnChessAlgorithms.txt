@@ -1,0 +1,30 @@
+minimax algorithm: 
+-it is backtracking based method. BFS is not used as it will traverse only the next level
+ and not the entire tree for a move.
+
+-max means maximize utility or reward , min means minimize utility. if i am max, 
+then my opponent will be min.
+
+-the main aim of min is to minimize our reward. so suppose we choose a node A which can give us the 
+highest valued leaf, then min in the next turn will try to find that path from there that will reach 
+to the least valued leaf.
+
+- Time complexity: O(branching factor^depth)=O(b^d)
+
+- for chess, average value of b=35 and d=100, so time is O(35^100). That's why optimisation is required.
+
+alpha-beta pruning:
+
+-optimised minimax algorithm
+
+-alpha->indicator for max, beta->indicator for min, pruning->skipping traversal of a useless 
+portion of tree
+
+-thus, alpha is initialised as negative infinity while beta as positive infinity.
+As the game proceeds, alpha increases while beta decreases
+
+-at every turn, we choose the path with higher value of alpha and skips the other portions
+
+-opponent does the same with beta.
+
+-time complexity becomes: O(b^ d/2) in average case but in worst case, it is O(b^d).
